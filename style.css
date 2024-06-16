@@ -24,8 +24,9 @@ h4 {
 }
 
 h6 {
-    font-weight: 700;
-    font-size: 12px;
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
 }
 
 p {
@@ -689,6 +690,78 @@ footer a:hover {
     background-color: #088178;
     color: #fff;
 }
+
+.main {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 500px;
+    text-align: center;
+}
+
+
+.container{
+    background: white;
+    margin-top: 50px;
+    margin-left: 500px;
+    margin-right: 0px;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+
+
+h6 {
+    color: #4CAF50;
+    margin-left: 100px;
+
+}
+
+h7 {
+    font-size: 25px;
+    margin-left: 10px;
+    line-height: 54px;
+    color: #222;
+}
+
+
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+  }
+
+  form input, form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background-color: #218838;
+  }
+
+
 
 
 /* Media Query */

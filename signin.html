@@ -18,7 +18,7 @@
                 <li><a href="shop.html">Shop</a></li>
                 <li><a  href="blog.html">Blog</a></li>
                 <li><a  href="about.html">About</a></li>
-                <li><a class="active"href="contact.html">Contact</a></li>
+                <li><a  href="contact.html">Contact</a></li>
                 <li><a class="active"href="Signin.html"></li><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
                 <li><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
                 
@@ -27,68 +27,73 @@
         </div>
     </section>
 
-<section id="page-header">
-<h2>#Let's Talk</h2>
-<p>LEAVE A MESSAGE. We love to hear from you!</p>
-</section>
 
-<section id="contact-details" class="section-p1">
-    <div class="details">
-        <span>GET IN TOUCH</span>
-        <h2>Visit one of our office location or contact us today</h2>
-        <h3>Head Office</h3>
 
-    <div>
-    <li>
-        <i class="fal fa-map"></i>
-        <p>105 Birchmount Road,Toronto</p>
-    </li>
-    <li>
-        <i class="far fa-envelope"></i>
-        <p>Ziaraclothing@gmail.com</p>
-    </li>
-    <li>
-        <i class="fas fa-phone-alt"></i>
-        <p>4376075807</p>
-    </li>
-    <li>
-        <i class="far fa-clock"></i>
-        <p>10:00 - 18:00, Mon - Sat</p>
-    </li>
-    </div>
-    </div>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+
+     <div class="container">
+    <h1>Login</h1>
+    <form id="feedbackForm">
+      <label for="name">Username:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyB4t-vVGfKrXfez2fxuWMU9gamJ26HOCvY",
+    authDomain: "e-comerce-site-34aec.firebaseapp.com",
+    databaseURL: "https://e-comerce-site-34aec-default-rtdb.firebaseio.com",
+    projectId: "e-comerce-site-34aec",
+    storageBucket: "e-comerce-site-34aec.appspot.com",
+    messagingSenderId: "494220908881",
+    appId: "1:494220908881:web:467a3353033f7fb8875b70",
+    measurementId: "G-DRF5RGYKR6"
+  };
+
+    // Initialize Firebase
+     firebase.initializeApp(firebaseConfig);
+    // Form submission event
+    document.getElementById('feedbackForm').addEventListener('submit', submitForm);
+
+    function submitForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      saveFeedback(name, email,password );
+    }
+
+    // Save feedback to Firebase
+    function saveFeedback(name, email,password ) {
+      const feedbackRef =  firebase.database().ref('feedback');
+      const newFeedbackRef = feedbackRef.push();
+      newFeedbackRef.set({
+        name: name,
+        email: email,
+        password: password
+      });
+      alert('Login successfully!');
+      document.getElementById('feedbackForm').reset();
+    }
+  </script>
     
-    <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.510978237574!2d-79.23546702434341!3d43.78300907109623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0f0bc58f6ed%3A0x1ad3d7a867d2a34a!2sCanadore%20College%20%40%20Stanford!5e0!3m2!1sen!2sca!4v1717816051186!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-    </div>
-
-</section>
-
-<section id="form-details">
-    <form action="">
-        <span>LEAVE A MESSAGE</span>
-        <h2>We love to hear from you</h2>
-        <input types="text" placeholder="Your Name">
-        <input types="text" placeholder="Your Name">
-        <input types="text" placeholder="Your Name">
-        <textarea name="" id="" cols="30" rows="10" placeholder="YOUR MESSAGE"></textarea>
-        <button class="normal">Submit</button>
- </form>
-</section>
+  </script>
+</body>
+</html>
 
 
-
-
-<section id="newsletter" class="section-p1 section-m1">
-    <div class="newsletter">
-        <h4>Sign Up for Newsletters</h4>
-        <p>Get E-mail updates about our latest shop and <span>special offers.</span> </p>
-    </div>
-    <div class="form">
-        <input type="text" placeholder="Your email address">
-        <button class="normal">Sign Up</button>
-    </div>
-</section>
 
 <footer class="section-p1">
     <div class="col">
